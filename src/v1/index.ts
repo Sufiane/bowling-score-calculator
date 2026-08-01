@@ -1,4 +1,4 @@
-type BowlingFrame = {
+export type BowlingFrame = {
     roll1: number;
     roll2: number;
     hasBonus: 'spare' | 'strike' | null
@@ -16,7 +16,7 @@ const isSpareBonus = (frame: BowlingFrame): Boolean => {
     return frame.hasBonus !== null && frame.hasBonus === 'spare';
 };
 
-function getScore(bowlingFrames: BowlingFrame[]): number {
+export function getScore(bowlingFrames: BowlingFrame[]): number {
     const result = bowlingFrames.reduce<{
         score: number,
         finalFrames: { result: number }[]
@@ -96,8 +96,8 @@ const testFrames: BowlingFrame[] = [
         roll1: 10,
         roll2: 0,
         hasBonus: 'strike',
-    }
-    , {
+    },
+    {
         roll1: 10,
         roll2: 0,
         hasBonus: 'strike',
@@ -106,7 +106,8 @@ const testFrames: BowlingFrame[] = [
         roll1: 10,
         roll2: 0,
         hasBonus: 'strike',
-    }, {
+    },
+    {
         roll1: 10,
         roll2: 10,
         hasBonus: null,
