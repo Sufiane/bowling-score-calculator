@@ -1,6 +1,7 @@
 import { describe, it, type TestContext } from 'node:test';
 import * as v1 from '../src/v1/index.ts';
 import * as v2 from '../src/v2/index.ts';
+import * as v3 from '../src/v3/index.ts';
 
 describe('Global test suites', () => {
     describe('when user only scored strikes', () => {
@@ -127,6 +128,12 @@ describe('Global test suites', () => {
 
             t.assert.strictEqual(v2.getScore(partyResult), 300);
         });
+
+        it('v3', (t: TestContext) => {
+            const partyResult = [[10, 0], [10, 0], [10, 0], [10, 0], [10, 0], [10, 0], [10, 0], [10, 0], [10, 0], [10, 0], [10, 10]];
+
+            t.assert.strictEqual(v3.getScore(partyResult), 300);
+        });
     });
 
     describe('when user never scores', () => {
@@ -243,7 +250,7 @@ describe('Global test suites', () => {
 
             t.assert.strictEqual(v2.getScore(partyResult), 0);
         });
-    })
+    });
 
     describe('when user scores a spare at the last round', () => {
         it('v1', (t: TestContext) => {
@@ -369,5 +376,5 @@ describe('Global test suites', () => {
 
             t.assert.strictEqual(v2.getScore(partyResult), 279);
         });
-    })
+    });
 });

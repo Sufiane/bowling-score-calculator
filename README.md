@@ -78,3 +78,26 @@ In this version, I took into account my feeling regarding the input format (whic
 The bonus could be calculated instead of relying on it from the client. I also properly split the code, and handle more gracefully the extra frame.
 
 While doing this, i thought of another more rough solution, it will be the version 3.
+
+## V3
+
+The idea I had for this version, was to use a simple array for the input.
+If we look at the problem with a really simple look, it's just an array of throws (the second array)
+It's not as precise (or flashy) as a proper Type, since we could have array of 3 values, but then in the code we only take the first 2.
+Also, one of the assumption of this test was that the client already validated the data, so we could go blindly regarding format.
+
+Then, once I had that out of my mind, I was kinda doing the same thing as the previous version, looping over the format. So what's the point of just changing the format ?
+That's when the idea of chaining came to my mind. I think I got stuck thinking about doing it "live" or as if i got the result live.
+When in the end, I know that to calculate round 1 I need round 2 & 3 (in case of bonuses), since I already have them I could just chain them.
+At first I didn't really like that idea, I feel like it's not "elegant", it's like a hardcoded solution, what happens if tomorrow we want to bend the rules a bit and have a longer party ? 
+This solution would need a rework (that being said, v2 as well since I've hard coded the last frame index, instead of using the length of the array - 1 as trigger for the last frame...)
+
+But this solution fits perfectly for the issue at hand, and in the end that's all that matter.
+It would be a cons in a situation that could evolve, and then v2 would fit more easily (with close to no rework if I've had coded it better in the first place)
+
+That's the learning I will take home, not to think too much of the future in such condition, and just bootstrap the simplest (dumbest?) solution.
+We can always improve a working solution.
+
+###
+Feel free to propose your solution to the problem through PRs, I'd love to have second opinions.
+Any feedback on the 3 proposed solution are also welcome.
