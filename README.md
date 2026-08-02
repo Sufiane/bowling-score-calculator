@@ -70,3 +70,11 @@ This heads up cleared all difficulties and complexity and led me to finishing up
 In a version 2 of this exercise I will improve the current solution to make it more elegant (input format wise, testing scenarios, code improvements)
 
 I plan in a future version, to code the live calculation which I think will be "more difficult" due to the active bonus calculation.
+
+
+## V2
+
+In this version, I took into account my feeling regarding the input format (which is really the whole point of this test IMO).
+The bonus could be calculated instead of relying on it from the client. I also properly split the code, and handle more gracefully the extra frame.
+
+While doing this, i thought of another more rough solution, it will be the version 3.
